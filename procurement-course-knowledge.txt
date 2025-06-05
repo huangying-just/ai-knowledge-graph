@@ -1,0 +1,143 @@
+采购管理课程知识体系
+
+第一部分：采购管理导论与基础 (Foundations of Procurement Management)
+
+模块一：采购管理概述 (Introduction to Procurement Management)
+1.1 采购的定义、目标与重要性 (Definition, Objectives, and Importance of Procurement)
+价值创造、成本节约、风险控制、供应保障、创新驱动
+1.2 采购的类型 (Types of Procurement)
+直接采购 vs. 间接采购
+生产性采购 vs. 非生产性采购
+国内采购 vs. 国际采购
+政府采购买 vs. 企业采购
+1.3 采购管理的发展历程与趋势 (Evolution and Trends in Procurement Management)
+从事务性到战略性，数字化、可持续化、智能化
+1.4 采购在组织中的角色与定位 (Role and Positioning of Procurement in an Organization)
+与供应链、生产、财务、研发等部门的协同
+1.5 采购管理的核心流程 (Core Procurement Process Cycle - P2P/S2P)
+需求识别 -> 寻源 -> 合同 -> 订单 -> 收货 -> 付款
+模块二：采购组织与职业道德 (Procurement Organization and Ethics)
+2.1 采购组织架构设计 (Procurement Organizational Structures)
+集中采购、分散采购、混合采购
+品类管理团队、战略寻源团队
+2.2 采购人员的技能与素质要求 (Skills and Competencies for Procurement Professionals)
+2.3 采购职业道德与行为准则 (Procurement Ethics and Code of Conduct)
+利益冲突、保密性、公平竞争、反腐败
+2.4 采购相关的法律法规基础 (Basic Legal and Regulatory Framework for Procurement)
+第二部分：战略采购与品类管理 (Strategic Sourcing and Category Management)
+
+模块三：采购战略与规划 (Procurement Strategy and Planning)
+3.1 企业战略与采购战略的对齐 (Aligning Corporate Strategy with Procurement Strategy)
+3.2 采购环境分析 (Procurement Environmental Analysis)
+PESTEL分析、SWOT分析
+3.3 支出分析与机会识别 (Spend Analysis and Opportunity Identification)
+数据收集、清洗、分类（如UNSPSC编码）、可视化
+3.4 采购目标设定与KPIs (Setting Procurement Objectives and KPIs)
+成本节约、供应安全、质量提升、供应商创新、可持续性
+3.5 采购计划的制定与执行 (Developing and Executing Procurement Plans)
+模块四：品类管理 (Category Management)
+4.1 品类管理的定义与流程 (Definition and Process of Category Management)
+4.2 品类划分与品类树构建 (Category Segmentation and Hierarchy)
+4.3 品类特征分析与市场情报 (Category Profiling and Market Intelligence)
+供应市场分析、波特五力模型
+4.4 品类战略制定 (Developing Category Strategies)
+Kraljic矩阵（供应定位模型）、供应力分析
+4.5 品类战略的实施与绩效评估 (Implementing and Evaluating Category Strategies)
+模块五：战略寻源 (Strategic Sourcing)
+5.1 寻源流程 (The Sourcing Process)
+需求定义 -> 市场调研 -> 供应商搜寻 -> RFI/RFP/RFQ -> 评估与选择 -> 谈判 -> 签约
+5.2 需求规范与说明书 (Defining Requirements and Specifications)
+5.3 供应市场调研与分析 (Supply Market Research and Analysis)
+5.4 供应商识别与资格预审 (Supplier Identification and Pre-qualification)
+5.5 招标与投标管理 (Tendering and Bidding Management - RFx Process)
+RFI (信息邀请书), RFP (方案邀请书), RFQ (报价邀请书)
+电子招标平台应用
+5.6 供应商评估与选择标准 (Supplier Evaluation and Selection Criteria)
+成本、质量、交付、服务、技术、财务健康、可持续性
+加权评分法、TCO (总拥有成本) 分析
+第三部分：采购执行与运营管理 (Procurement Execution and Operations Management)
+
+模块六：谈判与合同管理 (Negotiation and Contract Management)
+6.1 采购谈判原理与策略 (Principles and Strategies of Procurement Negotiation)
+BATNA, ZOPA, 谈判风格, 谈判准备与计划
+6.2 谈判技巧与战术 (Negotiation Skills and Tactics)
+6.3 合同的构成要素与类型 (Elements and Types of Contracts)
+固定总价、成本加成、单价合同等
+6.4 合同条款与法律风险防范 (Key Contract Clauses and Legal Risk Mitigation)
+付款条件、交付条款 (Incoterms)、质量保证、违约责任、知识产权、保密条款
+6.5 合同的签订、履行与变更管理 (Contract Signing, Execution, and Change Management)
+6.6 合同争议解决 (Contract Dispute Resolution)
+模块七：订单管理与交付 (Order Management and Delivery)
+7.1 采购订单（PO）的生成与管理 (Purchase Order (PO) Generation and Management)
+7.2 订单跟踪与催货 (Order Tracking and Expediting)
+7.3 物流与运输管理基础 (Basics of Logistics and Transportation Management)
+7.4 收货、验收与入库流程 (Receiving, Inspection, and Warehousing Processes)
+7.5 发票处理与付款 (Invoice Processing and Payment - Procure-to-Pay Cycle)
+模块八：供应商关系管理 (Supplier Relationship Management - SRM)
+8.1 SRM的理念与重要性 (Concept and Importance of SRM)
+8.2 供应商细分与分类 (Supplier Segmentation and Classification)
+战略供应商、瓶颈供应商、杠杆供应商、常规供应商
+8.3 供应商绩效管理与评估 (Supplier Performance Management and Evaluation)
+KPIs, 评价体系, 定期回顾
+8.4 供应商协同与发展 (Supplier Collaboration and Development)
+联合创新、价值工程、风险共担
+8.5 供应商风险管理 (Managing Supplier Risks)
+识别、评估、监控、缓解（如备选供应商、安全库存）
+8.6 供应商的退出管理 (Supplier Exit Management)
+第四部分：采购的支撑与优化 (Procurement Support and Optimization)
+
+模块九：采购成本管理与价值分析 (Procurement Cost Management and Value Analysis)
+9.1 总拥有成本 (Total Cost of Ownership - TCO) 分析与应用
+9.2 价值分析/价值工程 (Value Analysis / Value Engineering - VA/VE)
+9.3 成本降低的策略与方法 (Cost Reduction Strategies and Techniques)
+杠杆采购、价格谈判、标准化、全球寻源
+9.4 价格分析与指数跟踪 (Price Analysis and Index Tracking)
+9.5 “应付成本”模型 (Should-Cost Modeling)
+模块十：采购风险管理与合规 (Procurement Risk Management and Compliance)
+10.1 采购风险的识别与分类 (Identifying and Classifying Procurement Risks)
+供应中断风险、价格波动风险、质量风险、合规风险、地缘政治风险
+10.2 采购风险评估与应对策略 (Procurement Risk Assessment and Mitigation Strategies)
+10.3 供应链弹性与业务连续性计划 (Supply Chain Resilience and Business Continuity Planning)
+10.4 采购合规性管理 (Procurement Compliance Management)
+内部政策、外部法规、审计
+模块十一：可持续采购与社会责任 (Sustainable Procurement and Social Responsibility)
+11.1 可持续采购的定义与驱动因素 (Definition and Drivers of Sustainable Procurement)
+11.2 环境可持续性 (Environmental Sustainability - Green Procurement)
+生命周期评估、碳足迹、循环经济
+11.3 社会可持续性 (Social Sustainability)
+劳工权益、公平贸易、多元化与包容性
+11.4 可持续性标准与认证 (Sustainability Standards and Certifications)
+11.5 在采购中融入可持续性考量 (Integrating Sustainability into Procurement Practices)
+模块十二：采购数字化与技术应用 (Procurement Digitalization and Technology Application)
+12.1 电子采购系统 (E-Procurement Systems)
+S2P (Source-to-Pay), P2P (Procure-to-Pay) 解决方案
+电子寻源、电子招投标、电子合同、电子目录、电子发票
+12.2 采购数据分析与商业智能 (Procurement Data Analytics and Business Intelligence)
+12.3 新兴技术在采购中的应用 (Emerging Technologies in Procurement)
+人工智能 (AI)、机器学习 (ML)、机器人流程自动化 (RPA)、区块链 (Blockchain)
+12.4 数字化转型的挑战与机遇 (Challenges and Opportunities of Digital Transformation)
+第五部分：高级与专题采购 (Advanced and Specialized Procurement Topics)
+
+模块十三：全球采购与国际贸易 (Global Sourcing and International Trade)
+13.1 全球采购的机遇与挑战 (Opportunities and Challenges of Global Sourcing)
+13.2 国际贸易术语 (Incoterms) 的理解与应用
+13.3 跨文化沟通与谈判 (Cross-cultural Communication and Negotiation)
+13.4 国际物流与关务 (International Logistics and Customs)
+13.5 汇率风险与支付方式 (Currency Risk and Payment Methods)
+模块十四：服务采购 (Services Procurement / Indirect Procurement)
+14.1 服务采购的特点与挑战 (Characteristics and Challenges of Services Procurement)
+14.2 服务范围说明书 (Statement of Work - SOW) 的制定
+14.3 服务供应商的选择与管理 (Selecting and Managing Service Providers)
+14.4 服务水平协议 (Service Level Agreements - SLAs)
+14.5 咨询服务、营销服务、IT服务等特定服务采购
+模块十五：项目采购管理 (Project Procurement Management)
+15.1 项目采购的特点与流程 (Characteristics and Process of Project Procurement)
+15.2 项目采购规划 (Project Procurement Planning)
+15.3 项目合同类型选择 (Selecting Contract Types for Projects)
+15.4 项目采购执行与控制 (Project Procurement Execution and Control)
+模块十六：采购绩效管理与持续改进 (Procurement Performance Management and Continuous Improvement)
+16.1 采购绩效衡量指标体系 (Procurement Performance Measurement System - KPIs & Metrics)
+16.2 采购审计与评估 (Procurement Audits and Assessments)
+16.3 标杆管理 (Benchmarking)
+16.4 精益采购与六西格玛 (Lean Procurement and Six Sigma)
+16.5 采购流程优化与创新 (Procurement Process Optimization and Innovation)

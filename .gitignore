@@ -1,8 +1,46 @@
+# Python
 */__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 */.DS_Store
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+web_app.log
+
 # PyVis generated libraries
 lib/
 
-*.egg-info
-__pycache__
+# Generated knowledge graphs (keep examples but not all results)
+results/
+*.html
+*.json
+
+# Backup files
+*.zip
+*.tar.gz
+*.bak
+
+# Upload directory (optional - uncomment if you don't want to track uploads)
+# uploads/
+
+# UV lock file (can be regenerated)
+uv.lock

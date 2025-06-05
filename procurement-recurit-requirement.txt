@@ -1,0 +1,93 @@
+招聘采购人员时，通常会从以下几个方面考察候选人的能力、素养、技能和知识：
+一、能力 (Abilities / Capabilities)
+这是指候选人将知识和技能应用于实际工作并解决问题的综合体现。
+	1	沟通协调能力 (Communication and Coordination Skills):
+	◦	与内部部门（如生产、销售、财务、技术）有效沟通，准确理解需求。
+	◦	与供应商进行清晰、有效的沟通和谈判。
+	◦	处理内外部的矛盾和冲突。
+	2	谈判议价能力 (Negotiation Skills):
+	◦	能够制定谈判策略，为公司争取最优的采购价格、付款条件、交期和服务。
+	◦	具备良好的说服力和影响力。
+	3	分析与解决问题能力 (Analytical and Problem-Solving Skills):
+	◦	能够分析市场趋势、供应商报价、成本构成。
+	◦	识别采购过程中的潜在风险和问题，并提出解决方案。
+	◦	对数据敏感，能够从数据中发现问题和机会。
+	4	决策能力 (Decision-Making Skills):
+	◦	在信息不完全或时间紧迫的情况下，能够做出合理的采购决策。
+	◦	权衡成本、质量、交期、风险等多个因素。
+	5	学习与适应能力 (Learning Agility and Adaptability):
+	◦	快速学习新产品、新技术、新市场和新法规。
+	◦	适应不断变化的市场环境和公司需求。
+	6	抗压能力 (Stress Tolerance):
+	◦	在紧急采购、供应商突发状况、价格大幅波动等压力下保持冷静和高效工作。
+	7	组织与计划能力 (Organizational and Planning Skills):
+	◦	能够有效地管理多个采购项目和任务。
+	◦	制定合理的采购计划，确保物料及时供应。
+	8	战略思维能力 (Strategic Thinking - 尤其是高级采购岗位):
+	◦	能够从公司整体战略出发，制定采购策略。
+	◦	考虑长期供应商关系、供应链优化等。
+二、素养 (Qualities / Disposition / Ethics)
+这是指候选人的个人品质、职业道德和工作态度。
+	1	职业道德与诚信 (Professional Ethics and Integrity):
+	◦	廉洁自律，杜绝任何形式的商业贿赂和以权谋私。
+	◦	诚实守信，对公司和供应商负责。
+	2	责任心 (Sense of Responsibility):
+	◦	对采购结果负责，积极主动完成工作。
+	◦	勇于承担错误和责任。
+	3	细致严谨 (Attention to Detail and Rigor):
+	◦	关注合同条款、产品规格、数量、价格等细节，避免差错。
+	◦	工作流程规范，有条不紊。
+	4	成本意识 (Cost Consciousness):
+	◦	时刻关注成本控制，努力为公司降本增效。
+	5	风险意识 (Risk Awareness):
+	◦	能够识别和评估采购过程中的各种风险（如供应中断、质量问题、价格波动、合规风险等）。
+	6	团队合作精神 (Teamwork Spirit):
+	◦	乐于与团队成员和其他部门协作，共同达成目标。
+	7	积极主动性 (Proactiveness):
+	◦	主动发现问题、寻找改进机会、开发新供应商。
+	8	保密意识 (Confidentiality):
+	◦	对公司的商业秘密和采购信息严格保密。
+三、技能 (Skills)
+这是指候选人掌握和运用的具体操作技术和方法。
+	1	供应商开发与管理技能 (Supplier Sourcing and Management Skills):
+	◦	寻找、筛选、评估和认证供应商。
+	◦	建立和维护良好的供应商关系 (SRM)。
+	◦	进行供应商绩效评估和改进。
+	2	合同管理技能 (Contract Management Skills):
+	◦	起草、评审、签订和执行采购合同。
+	◦	理解合同条款，规避合同风险。
+	3	数据分析技能 (Data Analysis Skills):
+	◦	熟练使用Excel等工具进行数据收集、整理、分析和呈现。
+	◦	能够解读数据，为决策提供支持。
+	4	办公软件操作技能 (Office Software Proficiency):
+	◦	熟练使用Word, Excel, PowerPoint, Outlook等。
+	◦	熟悉ERP系统（如SAP, Oracle）的采购模块操作。
+	5	外语技能 (Foreign Language Skills - 尤其涉外采购):
+	◦	具备良好的英语或其他所需语种的听说读写能力，能够进行跨国沟通和阅读专业文件。
+	6	项目管理技能 (Project Management Skills - 针对复杂采购项目):
+	◦	能够规划、执行和监控采购项目，确保按时按质完成。
+	7	演示与汇报技能 (Presentation Skills):
+	◦	能够清晰、有条理地向上级或相关部门汇报采购工作、分析结果或方案。
+四、知识 (Knowledge)
+这是指候选人需要具备的理论基础和专业信息。
+	1	采购流程与原理知识 (Knowledge of Procurement Processes and Principles):
+	◦	熟悉完整的采购生命周期（需求识别、寻源、招标、谈判、下单、跟单、验收、付款、绩效评估等）。
+	◦	了解招投标法、合同法等相关法律法规。
+	2	供应链管理知识 (Supply Chain Management Knowledge):
+	◦	理解供应链的基本概念、运作模式和优化方法。
+	3	产品/行业知识 (Product/Industry Knowledge):
+	◦	了解所采购物料/服务的特性、规格、市场行情、主要供应商、技术发展趋势等。
+	◦	对所在行业的供应链特点有一定认识。
+	4	成本构成与分析知识 (Knowledge of Cost Structure and Analysis):
+	◦	了解物料成本的构成（如材料、人工、制造费用、运输、关税等）。
+	◦	掌握成本分析方法（如TCO总拥有成本分析）。
+	5	财务与税务基础知识 (Basic Finance and Tax Knowledge):
+	◦	了解与采购相关的财务流程（如预算、付款、发票处理）。
+	◦	了解基本的税务知识（如增值税）。
+	6	法律法规知识 (Legal and Regulatory Knowledge):
+	◦	熟悉《合同法》、《招投标法》等与采购相关的法律法规。
+	◦	了解进出口贸易、海关、环保等相关规定（如适用）。
+	7	质量管理知识 (Quality Management Knowledge):
+	◦	了解基本的质量管理体系（如ISO9001）和质量控制方法。
+	8	物流与仓储知识 (Logistics and Warehousing Knowledge):
+	◦	了解基本的运输方式、仓储管理、库存控制等。

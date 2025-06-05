@@ -80,14 +80,35 @@ def standardize_entities(triples, config):
     standardized_entities = {}
     entity_groups = defaultdict(list)
     
+    # Helper function to detect if text is primarily Chinese
+    def is_chinese_text(text):
+        chinese_char_count = sum(1 for char in text if '\u4e00' <= char <= '\u9fff')
+        total_non_space_chars = len([char for char in text if not char.isspace()])
+        return chinese_char_count / max(total_non_space_chars, 1) > 0.3
+    
     # Helper function to normalize text for comparison
     def normalize_text(text):
         # Convert to lowercase
         text = text.lower()
-        # Remove common stopwords that might appear in entity names
-        stopwords = {"the", "a", "an", "of", "and", "or", "in", "on", "at", "to", "for", "with", "by", "as"}
-        words = [word for word in re.findall(r'\b\w+\b', text) if word not in stopwords]
-        return " ".join(words)
+        
+        if is_chinese_text(text):
+            # For Chinese text, remove common Chinese stopwords
+            chinese_stopwords = {"的", "是", "了", "在", "和", "与", "或", "及", "以及", "等", "这", "那", "此", "其", "之", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"}
+            # For Chinese, we need different processing since there are no spaces between words
+            # Remove punctuation and common single-character words
+            # Remove punctuation
+            text = re.sub(r'[^\u4e00-\u9fff\w]', '', text)
+            # Remove common single-character stopwords
+            filtered_chars = []
+            for char in text:
+                if char not in chinese_stopwords:
+                    filtered_chars.append(char)
+            return ''.join(filtered_chars)
+        else:
+            # For English text, remove common English stopwords
+            stopwords = {"the", "a", "an", "of", "and", "or", "in", "on", "at", "to", "for", "with", "by", "as"}
+            words = [word for word in re.findall(r'\b\w+\b', text) if word not in stopwords]
+            return " ".join(words)
     
     # Process entities in order of complexity (longer entities first)
     sorted_entities = sorted(all_entities, key=lambda x: (-len(x), x))
@@ -120,7 +141,8 @@ def standardize_entities(triples, config):
                 standardized_entities[variant] = standard_form
     
     # 4. Second pass: check for root word relationships
-    # This handles cases like "capitalism" and "capitalist decay"
+    # This handles cases like "capitalism" and "capitalist decay" for English
+    # and similar patterns for Chinese
     additional_standardizations = {}
     
     # Get all standardized entity names (after first pass)
@@ -128,34 +150,41 @@ def standardize_entities(triples, config):
     sorted_standards = sorted(standard_forms, key=len)
     
     for i, entity1 in enumerate(sorted_standards):
-        e1_words = set(entity1.split())
-        
         for entity2 in sorted_standards[i+1:]:
             if entity1 == entity2:
                 continue
-                
-            # Check if one entity is a subset of the other
-            e2_words = set(entity2.split())
             
-            # If one entity contains all words from the other
-            if e1_words.issubset(e2_words) and len(e1_words) > 0:
-                # The shorter one is likely the more general concept
-                additional_standardizations[entity2] = entity1
-            elif e2_words.issubset(e1_words) and len(e2_words) > 0:
-                additional_standardizations[entity1] = entity2
+            if is_chinese_text(entity1) and is_chinese_text(entity2):
+                # For Chinese entities, check if one contains the other
+                if entity1 in entity2 and len(entity1) >= 2:
+                    # The shorter one is likely the more general concept
+                    additional_standardizations[entity2] = entity1
+                elif entity2 in entity1 and len(entity2) >= 2:
+                    additional_standardizations[entity1] = entity2
             else:
-                # Check for stemming/root similarities
-                stems1 = {word[:4] for word in e1_words if len(word) > 4}
-                stems2 = {word[:4] for word in e2_words if len(word) > 4}
+                # For English entities, use the original word-based logic
+                e1_words = set(entity1.split())
+                e2_words = set(entity2.split())
                 
-                shared_stems = stems1.intersection(stems2)
-                
-                if shared_stems and (len(shared_stems) / max(len(stems1), len(stems2))) > 0.5:
-                    # Use the shorter entity as the standard
-                    if len(entity1) <= len(entity2):
-                        additional_standardizations[entity2] = entity1
-                    else:
-                        additional_standardizations[entity1] = entity2
+                # If one entity contains all words from the other
+                if e1_words.issubset(e2_words) and len(e1_words) > 0:
+                    # The shorter one is likely the more general concept
+                    additional_standardizations[entity2] = entity1
+                elif e2_words.issubset(e1_words) and len(e2_words) > 0:
+                    additional_standardizations[entity1] = entity2
+                else:
+                    # Check for stemming/root similarities
+                    stems1 = {word[:4] for word in e1_words if len(word) > 4}
+                    stems2 = {word[:4] for word in e2_words if len(word) > 4}
+                    
+                    shared_stems = stems1.intersection(stems2)
+                    
+                    if shared_stems and (len(shared_stems) / max(len(stems1), len(stems2))) > 0.5:
+                        # Use the shorter entity as the standard
+                        if len(entity1) <= len(entity2):
+                            additional_standardizations[entity2] = entity1
+                        else:
+                            additional_standardizations[entity1] = entity2
     
     # Apply additional standardizations
     for entity, standard in additional_standardizations.items():
@@ -581,16 +610,39 @@ def _infer_within_community_relationships(triples, communities, config):
         
         # Find disconnected pairs that might be semantically related
         disconnected_pairs = []
+        
+        # Helper function to detect if text is primarily Chinese
+        def is_chinese_text(text):
+            chinese_char_count = sum(1 for char in text if '\u4e00' <= char <= '\u9fff')
+            total_non_space_chars = len([char for char in text if not char.isspace()])
+            return chinese_char_count / max(total_non_space_chars, 1) > 0.3
+        
         for (a, b), connected in connections.items():
             if not connected and a != b:  # Ensure a and b are different entities
-                # Check for potential semantic relationship (e.g., shared words)
-                a_words = set(a.lower().split())
-                b_words = set(b.lower().split())
-                shared_words = a_words.intersection(b_words)
-                
-                # If they share words or one is contained in the other, they might be related
-                if shared_words or a.lower() in b.lower() or b.lower() in a.lower():
-                    disconnected_pairs.append((a, b))
+                # Check for potential semantic relationship
+                if is_chinese_text(a) and is_chinese_text(b):
+                    # For Chinese entities, check character overlap and containment
+                    a_lower = a.lower()
+                    b_lower = b.lower()
+                    
+                    # Check if one contains the other (at least 2 characters)
+                    if (len(a_lower) >= 2 and a_lower in b_lower) or (len(b_lower) >= 2 and b_lower in a_lower):
+                        disconnected_pairs.append((a, b))
+                    else:
+                        # Check for shared Chinese characters (at least 2 common)
+                        common_chars = set(a_lower) & set(b_lower)
+                        significant_common = {char for char in common_chars if '\u4e00' <= char <= '\u9fff'}
+                        if len(significant_common) >= 2:
+                            disconnected_pairs.append((a, b))
+                else:
+                    # For English entities, use word-based similarity
+                    a_words = set(a.lower().split())
+                    b_words = set(b.lower().split())
+                    shared_words = a_words.intersection(b_words)
+                    
+                    # If they share words or one is contained in the other, they might be related
+                    if shared_words or a.lower() in b.lower() or b.lower() in a.lower():
+                        disconnected_pairs.append((a, b))
         
         # Limit to the most promising pairs
         disconnected_pairs = disconnected_pairs[:10]
@@ -664,7 +716,8 @@ def _infer_within_community_relationships(triples, communities, config):
 def _infer_relationships_by_lexical_similarity(entities, triples):
     """
     Infer relationships between entities based on lexical similarity.
-    This can help connect entities like "capitalism" and "capitalist decay".
+    This can help connect entities like "capitalism" and "capitalist decay" for English,
+    and similar patterns for Chinese entities.
     
     Args:
         entities: Set of all entities
@@ -675,6 +728,12 @@ def _infer_relationships_by_lexical_similarity(entities, triples):
     """
     new_triples = []
     processed_pairs = set()
+    
+    # Helper function to detect if text is primarily Chinese
+    def is_chinese_text(text):
+        chinese_char_count = sum(1 for char in text if '\u4e00' <= char <= '\u9fff')
+        total_non_space_chars = len([char for char in text if not char.isspace()])
+        return chinese_char_count / max(total_non_space_chars, 1) > 0.3
     
     # Create a dictionary to track existing relationships
     existing_relationships = set()
@@ -703,53 +762,85 @@ def _infer_relationships_by_lexical_similarity(entities, triples):
             e1_lower = entity1.lower()
             e2_lower = entity2.lower()
             
-            # Simple word overlap check
-            e1_words = set(e1_lower.split())
-            e2_words = set(e2_lower.split())
-            shared_words = e1_words.intersection(e2_words)
-            
-            if shared_words:
-                # Create relationships based on shared words
-                main_shared = max(shared_words, key=len)
+            if is_chinese_text(entity1) and is_chinese_text(entity2):
+                # For Chinese entities, use character-based similarity
+                # Check if one entity contains the other (at least 2 characters)
+                if len(e1_lower) >= 2 and e1_lower in e2_lower:
+                    new_triples.append({
+                        "subject": entity2,
+                        "predicate": "关联",
+                        "object": entity1,
+                        "inferred": True
+                    })
+                elif len(e2_lower) >= 2 and e2_lower in e1_lower:
+                    new_triples.append({
+                        "subject": entity1,
+                        "predicate": "关联",
+                        "object": entity2,
+                        "inferred": True
+                    })
+                else:
+                    # Check for shared Chinese characters (at least 2 common characters)
+                    common_chars = set(e1_lower) & set(e2_lower)
+                    # Filter out common punctuation and single characters
+                    significant_common = {char for char in common_chars if '\u4e00' <= char <= '\u9fff'}
+                    
+                    if len(significant_common) >= 2:
+                        new_triples.append({
+                            "subject": entity1,
+                            "predicate": "相关",
+                            "object": entity2,
+                            "inferred": True
+                        })
+            else:
+                # For English entities, use the original word-based logic
+                # Simple word overlap check
+                e1_words = set(e1_lower.split())
+                e2_words = set(e2_lower.split())
+                shared_words = e1_words.intersection(e2_words)
                 
-                if len(main_shared) >= 4:  # Only consider significant shared words
-                    if e1_lower.startswith(main_shared) and not e2_lower.startswith(main_shared):
-                        new_triples.append({
-                            "subject": entity2,
-                            "predicate": "relates to",
-                            "object": entity1,
-                            "inferred": True
-                        })
-                    elif e2_lower.startswith(main_shared) and not e1_lower.startswith(main_shared):
-                        new_triples.append({
-                            "subject": entity1,
-                            "predicate": "relates to",
-                            "object": entity2,
-                            "inferred": True
-                        })
-                    else:
-                        new_triples.append({
-                            "subject": entity1,
-                            "predicate": "related to",
-                            "object": entity2,
-                            "inferred": True
-                        })
-            
-            # Check if one entity contains the other
-            elif e1_lower in e2_lower:
-                new_triples.append({
-                    "subject": entity2,
-                    "predicate": "is type of",
-                    "object": entity1,
-                    "inferred": True
-                })
-            elif e2_lower in e1_lower:
-                new_triples.append({
-                    "subject": entity1,
-                    "predicate": "is type of",
-                    "object": entity2,
-                    "inferred": True
-                })
+                if shared_words:
+                    # Create relationships based on shared words
+                    main_shared = max(shared_words, key=len)
+                    
+                    if len(main_shared) >= 4:  # Only consider significant shared words
+                        if e1_lower.startswith(main_shared) and not e2_lower.startswith(main_shared):
+                            new_triples.append({
+                                "subject": entity2,
+                                "predicate": "relates to",
+                                "object": entity1,
+                                "inferred": True
+                            })
+                        elif e2_lower.startswith(main_shared) and not e1_lower.startswith(main_shared):
+                            new_triples.append({
+                                "subject": entity1,
+                                "predicate": "relates to",
+                                "object": entity2,
+                                "inferred": True
+                            })
+                        else:
+                            new_triples.append({
+                                "subject": entity1,
+                                "predicate": "related to",
+                                "object": entity2,
+                                "inferred": True
+                            })
+                
+                # Check if one entity contains the other
+                elif e1_lower in e2_lower:
+                    new_triples.append({
+                        "subject": entity2,
+                        "predicate": "is type of",
+                        "object": entity1,
+                        "inferred": True
+                    })
+                elif e2_lower in e1_lower:
+                    new_triples.append({
+                        "subject": entity1,
+                        "predicate": "is type of",
+                        "object": entity2,
+                        "inferred": True
+                    })
     
     print(f"Inferred {len(new_triples)} relationships based on lexical similarity")
     return new_triples 
