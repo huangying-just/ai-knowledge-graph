@@ -1,3 +1,6 @@
+本项目基于 https://github.com/robert-mcdermott/ai-knowledge-graph 进行的修改。增加了前端界面，修改了LLM的提示词，对中文更加友好。
+
+
 ![ai-knowledge-graph-example](https://github.com/robert-mcdermott/ai-knowledge-graph/blob/main/data/ai-knowledge-graph-example.png)
 
 # AI Powered Knowledge Graph Generator
